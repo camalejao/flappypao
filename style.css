@@ -14,8 +14,30 @@ body {
 
 canvas {
     display: block;
+    position: relative;
+}
+
+#game {
+    position: relative;
 }
 
 .info {
     margin-top: 10px;
 }
+
+.hidden {
+    display: none;
+}
+
+.restart-button {
+    display: flex;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid #986d34;
+    border-radius: 5px;
+    background-color: #c9ac68;
+    color: black;
+}
+.restart-button:hover {
+    background-color: #986d34;
+  }

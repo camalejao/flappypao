@@ -56,4 +56,8 @@ class Bread {
         );
         return collidedTop || collidedBottom;
     }
+
+    reset() {
+        this.canvasY = this.initialY;
+    }
 }

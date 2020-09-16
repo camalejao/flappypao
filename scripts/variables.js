@@ -11,3 +11,5 @@ let pipeImageTop;
 let pipeImageBottom;
 
 let score = 0;
+
+let tryAgainButton;

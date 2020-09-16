@@ -6,8 +6,8 @@ class Pipe {
         this.pipeY = pipeY;
         this.speed = speed;
 
-        this.pipes = [{canvasX: CANVAS_WIDTH, topY: -200, bottomY: 350, passed: false},
-            {canvasX: 2*CANVAS_WIDTH, topY: -200, bottomY: 350, passed: false}];
+        this.pipes = [Object.assign({}, PIPE_1_INITIAL_STATE), 
+            Object.assign({}, PIPE_2_INITIAL_STATE)];
         this.possibleY = [
             [-150, 400],
             [-300, 250],
@@ -49,6 +49,11 @@ class Pipe {
             pipeY: this.pipeY
         }
         return coords;
+    }
+
+    reset() {
+        this.pipes = [Object.assign({}, PIPE_1_INITIAL_STATE), 
+            Object.assign({}, PIPE_2_INITIAL_STATE)];
     }
 
     checkScore(bread) {
