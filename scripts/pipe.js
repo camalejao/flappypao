@@ -9,11 +9,11 @@ class Pipe {
         this.pipes = [Object.assign({}, PIPE_1_INITIAL_STATE), 
             Object.assign({}, PIPE_2_INITIAL_STATE)];
         this.possibleY = [
-            [-150, 400],
-            [-300, 250],
-            [0, 550],
-            [-200, 350],
-            [-250, 300]
+            [-155, 405],
+            [-305, 255],
+            [-5, 555],
+            [-205, 355],
+            [-255, 305]
         ];
     }
 

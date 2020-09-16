@@ -12,7 +12,7 @@ class Bread {
         this.initialY = canvasY;
         this.gravity = 2;
         this.jumpHeight = 0;
-        this.jumpBoost = -10;
+        this.jumpBoost = -12;
     }
 
     jump() {
