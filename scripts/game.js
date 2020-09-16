@@ -6,7 +6,7 @@ class Game {
 
     setup() {
         gameBackground = new GameBackground(backgroundImage, 2);
-        bread = new Bread(breadImage, 432, 471, 64, 77, CANVAS_WIDTH/3 + 64, CANVAS_HEIGHT/2);
+        bread = new Bread(breadImage, 432, 471, 64, 77, CANVAS_WIDTH/2 - 32, CANVAS_HEIGHT/2);
         pipe = new Pipe(pipeImageTop, pipeImageBottom, 150, 400, 5);
     }
 
@@ -27,7 +27,7 @@ class Game {
             fill('#c9ac68')
             strokeWeight(6)
             stroke('#986d34');
-            text('Clique ou use 🠕 \n para começar a jogar',
+            text('Clique/toque ou use \u2191\npara começar a jogar',
                 CANVAS_WIDTH/2, CANVAS_HEIGHT/5 * 4);
         }
 
