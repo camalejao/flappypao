@@ -18,9 +18,7 @@ class Game {
                 this.showText = false;
                 this.firstTry = false;
             }
-            if (this.started && checkOption('sound')) {
-                jumpSound.play(0, 0, 0.5);
-            }
+            if (this.started && checkOption('sound')) jumpSound.play();
             bread.jump();
         }
     }
@@ -53,7 +51,7 @@ class Game {
 
         if (this.started && (bread.checkFall() || bread.checkCollision(pipe.getCoordinates(0))
             || bread.checkCollision(pipe.getCoordinates(1)))) {
-                if (checkOption('sound')) gameOverSound.play(0, 0, 1);
+                if (checkOption('sound')) gameOverSound.play();
                 this.started = false;
                 noLoop();
                 tryAgainButton.draw();
