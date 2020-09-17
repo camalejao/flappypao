@@ -13,3 +13,7 @@ let pipeImageBottom;
 let score = 0;
 
 let tryAgainButton;
+
+let jumpSound;
+let scoreSound;
+let gameOverSound;

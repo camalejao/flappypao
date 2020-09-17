@@ -1,5 +1,6 @@
 class Game {
     constructor() {
+        this.firstTry = true;
         this.started = false;
         this.showText = true;
     }
@@ -12,8 +13,14 @@ class Game {
 
     keyPressed(key) {
         if (key == "ArrowUp") {
-            this.started = true;
-            this.showText = false;
+            if (this.firstTry) {
+                this.started = true;
+                this.showText = false;
+                this.firstTry = false;
+            }
+            if (this.started && checkOption('sound')) {
+                jumpSound.play(0, 0, 0.5);
+            }
             bread.jump();
         }
     }
@@ -22,7 +29,7 @@ class Game {
         gameBackground.show();
         
         if (this.showText) {
-            textSize(32);
+            textFont('Helvetica', 32);
             textAlign(CENTER, CENTER);
             fill('#c9ac68')
             strokeWeight(6)
@@ -37,7 +44,7 @@ class Game {
         }
         bread.show();
         
-        textSize(72);
+        textFont('Helvetica', 72);
         textAlign(CENTER, CENTER);
         fill('#c9ac68')
         strokeWeight(6)
@@ -46,12 +53,16 @@ class Game {
 
         if (this.started && (bread.checkFall() || bread.checkCollision(pipe.getCoordinates(0))
             || bread.checkCollision(pipe.getCoordinates(1)))) {
-            noLoop();
-            this.started = false;
-            tryAgainButton.draw();
+                if (checkOption('sound')) gameOverSound.play(0, 0, 1);
+                this.started = false;
+                noLoop();
+                tryAgainButton.draw();
         }
 
-        if (pipe.checkScore(bread)) score++;
+        if (pipe.checkScore(bread)) {
+            if (checkOption('sound')) scoreSound.play();
+            score++;
+        }
     }
 
     reset() {
@@ -61,5 +72,6 @@ class Game {
         bread.reset();
         tryAgainButton.rmv();
         loop();
+        this.keyPressed("ArrowUp");
     }
 }

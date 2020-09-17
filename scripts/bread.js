@@ -38,9 +38,12 @@ class Bread {
     }
 
     checkCollision(coords) {
-        // rect(this.canvasX, this.canvasY, this.breadX, this.breadY);
-        // rect(coords.canvasX, coords.canvasYTop, coords.pipeX, coords.pipeY);
-        // rect(coords.canvasX, coords.canvasYBottom, coords.pipeX, coords.pipeY);
+        if (checkOption('hitbox')) {
+            noFill();
+            rect(this.canvasX, this.canvasY, this.breadX, this.breadY);
+            rect(coords.canvasX, coords.canvasYTop, coords.pipeX, coords.pipeY);
+            rect(coords.canvasX, coords.canvasYBottom, coords.pipeX, coords.pipeY);
+        }
 
         const collidedTop = collideRectRect(
             this.canvasX, this.canvasY,

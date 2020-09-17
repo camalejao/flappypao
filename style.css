@@ -4,7 +4,9 @@ html, body {
 }
 
 body {
+    font-family: 'Helvetica';
     background-color: rgb(30, 30, 30);
+    color: white;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -21,7 +23,7 @@ canvas {
     position: relative;
 }
 
-.info {
+.options {
     margin-top: 10px;
 }
 
@@ -38,6 +40,35 @@ canvas {
     background-color: #c9ac68;
     color: black;
 }
+
 .restart-button:hover {
     background-color: #986d34;
-  }
+}
+
+label > input[type='checkbox'] {
+    display: none;
+}
+
+label > input[type='checkbox'] + *::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: gray;
+}
+
+label > input[type="checkbox"]:checked + *::before {
+    text-align: center;
+    background: #c9ac68;
+    border-color: #986d34;
+}
+
+label > input[type="checkbox"]:checked + * {
+    color: #986d34;
+}
+  
